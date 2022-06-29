@@ -11,7 +11,7 @@ export default function ArticleForm(props) {
   // }
   
   // ✨ where are my props? Destructure them here
-  const { articles, postArticle, updateArticle, setCurrentArticleId, currentArticleId, currentArticle } = props
+  const { postArticle, updateArticle, setCurrentArticleId, currentArticleId, currentArticle } = props
 
   useEffect(() => {
     // ✨ implement
@@ -22,7 +22,7 @@ export default function ArticleForm(props) {
     currentArticleId ? setValues(currentArticle) : setValues(initialFormValues)
   }, [currentArticle])
   // console.log('CURRENT', articles)
-  console.log('ARTICLES', articles)
+  // console.log('ARTICLES', articles)
 
 
   const onChange = evt => {

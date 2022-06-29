@@ -113,13 +113,13 @@ export default function App() {
   const updateArticle = (article) => {
     // ✨ implement
     // You got this!
-    console.log(article)
+    // console.log(article)
     // const updatedArt = { title: article.title, text: article.text, topic }
     setMessage('')
     setSpinnerOn(true)
     ApiGet().put(`/articles/${article.article_id}`, article)
     .then(res => {
-      console.log(res)
+      // console.log(res)
       setArticles(articles.map(art => {
         if(art.article_id === res.data.article.article_id) {
           return res.data.article
@@ -129,6 +129,7 @@ export default function App() {
       }))
       setMessage(res.data.message)
       setSpinnerOn(false)
+      setCurrentArticleId(null)
     })
     .catch(err => {
       console.log({err})
